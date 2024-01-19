@@ -1,0 +1,6 @@
+platform = "gcp"
+
+[gcp]
+bucket = "<bucket name for images>"
+project_id = "<gcp project id>"
+zone = "<gcp zone>"
