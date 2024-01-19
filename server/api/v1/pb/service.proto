@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package service_v1;
+option go_package = "service/api/v1/pb";
+
+message PrepareImageRequest {
+    string program = 1;
+    string path = 2;
+}
+message PrepareImageResponse {}
+
+message CreateInstanceRequest {
+    string program = 1;
+}
+message CreateInstanceResponse {
+    string instance_id = 1;
+}
+
+message DeleteInstanceRequest {
+    string instance_id = 1;
+}
+message DeleteInstanceResponse {}
+
+
+service Orchestrator {
+    rpc PrepareImage(PrepareImageRequest) returns (PrepareImageResponse) {}
+    rpc CreateInstance(CreateInstanceRequest) returns (CreateInstanceResponse) {}
+    rpc DeleteInstance(DeleteInstanceRequest) returns (DeleteInstanceResponse) {}
+}
